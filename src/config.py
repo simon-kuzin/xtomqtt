@@ -1,11 +1,14 @@
-import yaml
+import yaml,logging
 from utils.collection import dict_slice_keys,dict_slice_not_keys
+
+log = logging.getLogger(__name__)
 
 mqtt_config=['client_id', 'clean_session', 'userdata', 'protocol', 'transport', 'reconnect_on_failure']
 
 class Config:
-  def __init__(self):
-    with open('inventory.yml', 'r') as file:
+  def __init__(self,filename='inventory.yml'):
+    log.info("Loading configuration from %s",filename)
+    with open(filename, 'r') as file:
         self.config_dict = yaml.safe_load(file)
   
   def get_devices(self):

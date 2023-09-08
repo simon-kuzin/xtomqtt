@@ -9,6 +9,8 @@
       "type": "python",
       "request": "launch",
       "program": "src/main.py",
+      "args": ["untracked/inventory.yml"],
+      "pythonArgs": ["-B"],
       "console": "integratedTerminal",
       "justMyCode": true
     }

@@ -1,9 +1,8 @@
 import coloredlogs, logging
+import argparse
 from config import Config
 from inventory import Inventory
-import yaml
 import paho.mqtt.client as mqtt
-import os, sys
 
 
 log = logging.getLogger("main")
@@ -16,8 +15,15 @@ paho_log.setLevel(logging.INFO)
 
 log.info("======= STARTING ======")
 
-config=Config()
-log.debug("Config loaded")
+
+parser = argparse.ArgumentParser(
+                    prog='X-To-MQTT',
+                    )
+parser.add_argument('filename') 
+args=parser.parse_args()
+
+config=Config(args.filename)
+log.info("======= CONFIG LOADED ======")
 
 inventory=Inventory(config.get_devices())
 log.debug("Inventory created"
