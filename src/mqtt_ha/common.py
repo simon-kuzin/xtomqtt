@@ -1,0 +1,1 @@
+MQTT_ROOT="hagateway"

@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tinytuya = "1.12.11"
+paho-mqtt = "*"
+pyyaml = "*"
+coloredlogs = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
