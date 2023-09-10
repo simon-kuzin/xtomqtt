@@ -29,7 +29,7 @@ class TinytuyaRemote(TinytuyaDevice):
           self.device.rf_send_button(**kwargs)
           dp=feature.config.get('dp')
           if dp:
-            self.onState({'dps':{dp:message}})
+            self.onState({dp:message})
 
       case _:
            self.log.warning("Commands for this deviceType are not supported. deviceType:%s",self.deviceType)
